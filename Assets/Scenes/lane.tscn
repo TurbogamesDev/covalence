@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rqcjtgftgnxf"]
+
+[ext_resource type="Script" uid="uid://brcixtty4fo86" path="res://Assets/Scripts/lane.gd" id="1_sixl5"]
+
+[node name="Lane" type="Node2D" unique_id=348312437 node_paths=PackedStringArray("notes_folder")]
+script = ExtResource("1_sixl5")
+notes_folder = NodePath("Notes")
+
+[node name="BackgroundPolygon2D" type="Polygon2D" parent="." unique_id=2080699180]
+color = Color(0, 0, 0, 0.2)
+polygon = PackedVector2Array(-80, -360, -80, 360, 80, 360, 80, -360)
+
+[node name="Notes" type="Node2D" parent="." unique_id=1622436022]
+
+[node name="JudgementLinePolygon2D" type="Polygon2D" parent="." unique_id=567545585]
+position = Vector2(0, -8)
+color = Color(0.5, 0.5, 0.5, 1)
+polygon = PackedVector2Array(-80, 240, -80, 256, 80, 256, 80, 240)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwtbaaagrvpqw"]
+
+[ext_resource type="Script" uid="uid://8db4ogge47nc" path="res://Assets/Scripts/note.gd" id="1_wg3dk"]
+
+[node name="Note" type="Node2D" unique_id=710427915]
+script = ExtResource("1_wg3dk")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1881517314]
+polygon = PackedVector2Array(-80, -16, -80, 16, 80, 16, 80, -16)
