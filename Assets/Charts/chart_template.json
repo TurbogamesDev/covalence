@@ -1,0 +1,33 @@
+{
+    "chart_format_version": 1,
+    "metadata": {
+        "title": "Song Name",
+        "composer": "Composer Name",
+        "cover_artist": "Cover Artist Name",
+        "bpm": 120.0,
+        "difficulty": "Hard"
+    },
+    "note_data": [
+        {
+            "start_time": 1.000,
+            "end_time": 1.000,
+            "column": 0,
+            "instant": true,
+            "note_type": "regular_note"
+        },
+        {
+            "start_time": 2.000,
+            "end_time": 3.000,
+            "column": 2,
+            "instant": false,
+            "note_type": "hold_note"
+        },
+        {
+            "start_time": 4.000,
+            "end_time": 4.000,
+            "column": 1,
+            "instant": true,
+            "note_type": "flip_note"
+        }
+    ]
+}
