@@ -1,0 +1,45 @@
+{
+    "chart_format_version": 1,
+    "metadata": {
+        "title": "Song Name",
+        "composer": "Composer Name",
+        "cover_artist": "Cover Artist Name",
+        "charter": "Charter Name",
+        "bpm": 120.0,
+        "difficulty": "Hard"
+    },
+    "note_data": {
+        "lane_0": [
+            {
+                "start_time": 1.000,
+                "end_time": 1.000,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ],
+        "lane_1": [
+            {
+                "start_time": 4.000,
+                "end_time": 4.000,
+                "instant": true,
+                "note_type": "flip_note"
+            }
+        ],
+        "lane_2": [
+            {
+                "start_time": 2.000,
+                "end_time": 3.000,
+                "instant": false,
+                "note_type": "hold_note"
+            }
+        ],
+        "lane_3": [
+            {
+                "start_time": 5.000,
+                "end_time": 5.000,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ]
+    }
+}

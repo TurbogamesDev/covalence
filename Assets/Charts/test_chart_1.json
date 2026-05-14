@@ -1,0 +1,381 @@
+{
+    "chart_format_version": 1,
+    "metadata": {
+        "title": "Test Chart 1",
+        "composer": "N/A",
+        "cover_artist": "N/A",
+        "charter": "Turbogames",
+        "bpm": 140.0,
+        "difficulty": "N/A"
+    },
+    "note_data": {
+        "lane_0": [
+            {
+                "start_time": 0,
+                "end_time": 0.21428550000000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 1.7142839999999997,
+                "end_time": 1.9285694999999996,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 4.714280999999999,
+                "end_time": 4.928566499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 7.285706999999998,
+                "end_time": 7.499992499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.142848999999998,
+                "end_time": 8.357134499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.999991000000001,
+                "end_time": 9.214276500000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 9.857133000000005,
+                "end_time": 10.071418500000005,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.571417000000011,
+                "end_time": 11.785702500000012,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.428559000000014,
+                "end_time": 12.642844500000015,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.857130000000016,
+                "end_time": 13.071415500000017,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 13.285701000000017,
+                "end_time": 13.499986500000018,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.142843000000019,
+                "end_time": 14.35712850000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.99998500000002,
+                "end_time": 15.214270500000021,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ],
+        "lane_1": [
+            {
+                "start_time": 0.42857100000000004,
+                "end_time": 0.6428565,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 2.1428549999999995,
+                "end_time": 2.3571404999999994,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 2.999996999999999,
+                "end_time": 3.214282499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 4.285709999999999,
+                "end_time": 4.499995499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 5.999993999999998,
+                "end_time": 6.214279499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 6.857135999999998,
+                "end_time": 7.071421499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 7.7142779999999975,
+                "end_time": 7.928563499999997,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.57142,
+                "end_time": 8.7857055,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 9.428562000000003,
+                "end_time": 9.642847500000004,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 10.285704000000006,
+                "end_time": 10.499989500000007,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.14284600000001,
+                "end_time": 11.35713150000001,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.571417000000011,
+                "end_time": 11.785702500000012,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.999988000000013,
+                "end_time": 12.214273500000013,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.857130000000016,
+                "end_time": 13.071415500000017,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 13.285701000000017,
+                "end_time": 13.499986500000018,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.142843000000019,
+                "end_time": 14.35712850000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.99998500000002,
+                "end_time": 15.214270500000021,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ],
+        "lane_2": [
+            {
+                "start_time": 0.8571420000000001,
+                "end_time": 1.0714275,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 2.5714259999999993,
+                "end_time": 2.7857114999999992,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 3.8571389999999988,
+                "end_time": 4.071424499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 5.5714229999999985,
+                "end_time": 5.785708499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 6.428564999999998,
+                "end_time": 6.642850499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 7.285706999999998,
+                "end_time": 7.499992499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.142848999999998,
+                "end_time": 8.357134499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.57142,
+                "end_time": 8.7857055,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 9.428562000000003,
+                "end_time": 9.642847500000004,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 10.285704000000006,
+                "end_time": 10.499989500000007,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 10.714275000000008,
+                "end_time": 10.928560500000009,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.14284600000001,
+                "end_time": 11.35713150000001,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.999988000000013,
+                "end_time": 12.214273500000013,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.428559000000014,
+                "end_time": 12.642844500000015,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 13.285701000000017,
+                "end_time": 13.499986500000018,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.142843000000019,
+                "end_time": 14.35712850000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.99998500000002,
+                "end_time": 15.214270500000021,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ],
+        "lane_3": [
+            {
+                "start_time": 1.2857129999999999,
+                "end_time": 1.4999984999999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 3.428567999999999,
+                "end_time": 3.642853499999999,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 5.142851999999999,
+                "end_time": 5.3571374999999986,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 6.857135999999998,
+                "end_time": 7.071421499999998,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 7.7142779999999975,
+                "end_time": 7.928563499999997,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 8.999991000000001,
+                "end_time": 9.214276500000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 9.857133000000005,
+                "end_time": 10.071418500000005,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 10.714275000000008,
+                "end_time": 10.928560500000009,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 11.999988000000013,
+                "end_time": 12.214273500000013,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.428559000000014,
+                "end_time": 12.642844500000015,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 12.857130000000016,
+                "end_time": 13.071415500000017,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.142843000000019,
+                "end_time": 14.35712850000002,
+                "instant": true,
+                "note_type": "regular_note"
+            },
+            {
+                "start_time": 14.99998500000002,
+                "end_time": 15.214270500000021,
+                "instant": true,
+                "note_type": "regular_note"
+            }
+        ]
+    }
+}
