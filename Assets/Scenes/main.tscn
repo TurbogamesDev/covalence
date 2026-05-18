@@ -1,22 +1,9 @@
 [gd_scene format=3 uid="uid://dlt51dl3rp1en"]
 
-[ext_resource type="PackedScene" uid="uid://rqcjtgftgnxf" path="res://Assets/Scenes/lane.tscn" id="1_l26l0"]
+[ext_resource type="PackedScene" uid="uid://cugelglhv0onf" path="res://Assets/Scenes/lane_handler.tscn" id="1_l26l0"]
 
 [node name="Main" type="Node2D" unique_id=180180390]
 
-[node name="Lane_0" parent="." unique_id=348312437 instance=ExtResource("1_l26l0")]
-position = Vector2(-240, 0)
-
-[node name="Lane_1" parent="." unique_id=933592979 instance=ExtResource("1_l26l0")]
-position = Vector2(-80, 0)
-lane_id = 1
-
-[node name="Lane_2" parent="." unique_id=584176251 instance=ExtResource("1_l26l0")]
-position = Vector2(80, 0)
-lane_id = 2
-
-[node name="Lane_3" parent="." unique_id=1630389253 instance=ExtResource("1_l26l0")]
-position = Vector2(240, 0)
-lane_id = 3
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2144131929]
+
+[node name="LaneHandler" parent="." unique_id=197780958 instance=ExtResource("1_l26l0")]
