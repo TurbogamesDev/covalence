@@ -14,7 +14,7 @@
                 "start_time": 1.000,
                 "end_time": 1.000,
                 "instant": true,
-                "note_type": "regular_note"
+                "note_id": 0
             }
         ],
         "lane_1": [
@@ -22,7 +22,7 @@
                 "start_time": 4.000,
                 "end_time": 4.000,
                 "instant": true,
-                "note_type": "flip_note"
+                "note_id": 2
             }
         ],
         "lane_2": [
@@ -30,7 +30,7 @@
                 "start_time": 2.000,
                 "end_time": 3.000,
                 "instant": false,
-                "note_type": "hold_note"
+                "note_id": 1
             }
         ],
         "lane_3": [
@@ -38,7 +38,7 @@
                 "start_time": 5.000,
                 "end_time": 5.000,
                 "instant": true,
-                "note_type": "regular_note"
+                "note_id": 0
             }
         ]
     }

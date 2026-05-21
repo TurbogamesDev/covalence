@@ -14,79 +14,79 @@
             "start_time": 0,
             "end_time": 0,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 1.7142839999999997,
             "end_time": 1.7142839999999997,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 4.714280999999999,
             "end_time": 4.714280999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 7.285706999999998,
             "end_time": 7.285706999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.142848999999998,
             "end_time": 8.142848999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.999991000000001,
             "end_time": 8.999991000000001,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 9.857133000000005,
             "end_time": 9.857133000000005,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.571417000000011,
             "end_time": 11.571417000000011,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.428559000000014,
             "end_time": 12.428559000000014,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.857130000000016,
             "end_time": 12.857130000000016,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 13.285701000000017,
             "end_time": 13.285701000000017,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.142843000000019,
             "end_time": 14.142843000000019,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.99998500000002,
             "end_time": 14.99998500000002,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         }
     ],
     "lane_1": [
@@ -94,103 +94,103 @@
             "start_time": 0.42857100000000004,
             "end_time": 0.42857100000000004,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 2.1428549999999995,
             "end_time": 2.1428549999999995,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 2.999996999999999,
             "end_time": 2.999996999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 4.285709999999999,
             "end_time": 4.285709999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 5.999993999999998,
             "end_time": 5.999993999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 6.857135999999998,
             "end_time": 6.857135999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 7.7142779999999975,
             "end_time": 7.7142779999999975,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.57142,
             "end_time": 8.57142,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 9.428562000000003,
             "end_time": 9.428562000000003,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 10.285704000000006,
             "end_time": 10.285704000000006,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.14284600000001,
             "end_time": 11.14284600000001,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.571417000000011,
             "end_time": 11.571417000000011,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.999988000000013,
             "end_time": 11.999988000000013,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.857130000000016,
             "end_time": 12.857130000000016,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 13.285701000000017,
             "end_time": 13.285701000000017,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.142843000000019,
             "end_time": 14.142843000000019,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.99998500000002,
             "end_time": 14.99998500000002,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         }
     ],
     "lane_2": [
@@ -198,103 +198,103 @@
             "start_time": 0.8571420000000001,
             "end_time": 0.8571420000000001,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 2.5714259999999993,
             "end_time": 2.5714259999999993,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 3.8571389999999988,
             "end_time": 3.8571389999999988,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 5.5714229999999985,
             "end_time": 5.5714229999999985,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 6.428564999999998,
             "end_time": 6.428564999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 7.285706999999998,
             "end_time": 7.285706999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.142848999999998,
             "end_time": 8.142848999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.57142,
             "end_time": 8.57142,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 9.428562000000003,
             "end_time": 9.428562000000003,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 10.285704000000006,
             "end_time": 10.285704000000006,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 10.714275000000008,
             "end_time": 10.714275000000008,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.14284600000001,
             "end_time": 11.14284600000001,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.999988000000013,
             "end_time": 11.999988000000013,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.428559000000014,
             "end_time": 12.428559000000014,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 13.285701000000017,
             "end_time": 13.285701000000017,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.142843000000019,
             "end_time": 14.142843000000019,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.99998500000002,
             "end_time": 14.99998500000002,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         }
     ],
     "lane_3": [
@@ -302,79 +302,79 @@
             "start_time": 1.2857129999999999,
             "end_time": 1.2857129999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 3.428567999999999,
             "end_time": 3.428567999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 5.142851999999999,
             "end_time": 5.142851999999999,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 6.857135999999998,
             "end_time": 6.857135999999998,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 7.7142779999999975,
             "end_time": 7.7142779999999975,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 8.999991000000001,
             "end_time": 8.999991000000001,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 9.857133000000005,
             "end_time": 9.857133000000005,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 10.714275000000008,
             "end_time": 10.714275000000008,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 11.999988000000013,
             "end_time": 11.999988000000013,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.428559000000014,
             "end_time": 12.428559000000014,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 12.857130000000016,
             "end_time": 12.857130000000016,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.142843000000019,
             "end_time": 14.142843000000019,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         },
         {
             "start_time": 14.99998500000002,
             "end_time": 14.99998500000002,
             "instant": true,
-            "note_type": "regular_note"
+            "note_id": 0
         }
     ]
 }

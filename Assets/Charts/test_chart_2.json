@@ -1,0 +1,309 @@
+{
+    "chart_format_version": 1,
+    "metadata": {
+        "title": "Test Chart 2",
+        "composer": "N/A",
+        "cover_artist": "N/A",
+        "charter": "Turbogames",
+        "bpm": 140.0,
+        "difficulty": "N/A"
+    },
+    "note_data": {
+        "lane_0": [
+            {
+                "start_time": 0,
+                "end_time": 0,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 1.714,
+                "end_time": 1.714,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 5.571,
+                "end_time": 5.571,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 6.0,
+                "end_time": 6.429,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 6.857,
+                "end_time": 7.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 7.714,
+                "end_time": 8.143,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 8.571,
+                "end_time": 8.571,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 11.571,
+                "end_time": 11.571,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 12.0,
+                "end_time": 13.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 15.0,
+                "end_time": 16.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 16.714,
+                "end_time": 18.0,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 18.429,
+                "end_time": 18.857,
+                "instant": false,
+                "note_id": 1
+            }
+        ],
+        "lane_1": [
+            {
+                "start_time": 0.429,
+                "end_time": 0.429,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 2.143,
+                "end_time": 2.143,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 3.0,
+                "end_time": 3.0,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 4.714,
+                "end_time": 4.714,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 5.143,
+                "end_time": 5.571,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 7.286,
+                "end_time": 7.286,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 8.571,
+                "end_time": 9.0,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 9.429,
+                "end_time": 9.857,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 11.143,
+                "end_time": 11.571,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 12.429,
+                "end_time": 13.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 14.571,
+                "end_time": 15.857,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 16.286,
+                "end_time": 17.571,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 18.429,
+                "end_time": 18.857,
+                "instant": false,
+                "note_id": 1
+            }
+        ],
+        "lane_2": [
+            {
+                "start_time": 0.857,
+                "end_time": 0.857,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 2.571,
+                "end_time": 2.571,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 3.857,
+                "end_time": 3.857,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 4.286,
+                "end_time": 4.714,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 6.857,
+                "end_time": 7.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 7.714,
+                "end_time": 8.143,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 9.429,
+                "end_time": 9.429,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 10.714,
+                "end_time": 11.571,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 12.857,
+                "end_time": 13.286,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 14.143,
+                "end_time": 15.429,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 15.857,
+                "end_time": 17.143,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 18.429,
+                "end_time": 18.857,
+                "instant": false,
+                "note_id": 1
+            }
+        ],
+        "lane_3": [
+            {
+                "start_time": 1.286,
+                "end_time": 1.286,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 3.429,
+                "end_time": 3.857,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 6.429,
+                "end_time": 6.429,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 8.143,
+                "end_time": 8.143,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 8.571,
+                "end_time": 9.0,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 9.429,
+                "end_time": 9.857,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 10.286,
+                "end_time": 11.571,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 13.286,
+                "end_time": 13.286,
+                "instant": true,
+                "note_id": 0
+            },
+            {
+                "start_time": 13.714,
+                "end_time": 15.0,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 15.429,
+                "end_time": 16.714,
+                "instant": false,
+                "note_id": 1
+            },
+            {
+                "start_time": 18.429,
+                "end_time": 18.857,
+                "instant": false,
+                "note_id": 1
+            }
+        ]
+    }
+}
