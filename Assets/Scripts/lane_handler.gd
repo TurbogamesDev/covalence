@@ -22,8 +22,8 @@ func _ready() -> void:
     for lane: Lane in lanes:
         var notes_in_lane = current_parsed_chart.get_notes_for_lane_in_timeframe(lane.lane_id, 0.0, NOTE_SPAWN_BUFFER)
 
-        for note_data in notes_in_lane:
-            var target_time = note_data["start_time"]
+        for note_data: NoteData in notes_in_lane:
+            var target_time = note_data.start_time
 
             spawn_note_in_lane(lane.lane_id, target_time)
 
@@ -74,8 +74,8 @@ func _process(_delta: float) -> void:
             ChartTimeSynchroniser.current_time + NOTE_SPAWN_BUFFER
         )
 
-        for note_data in notes_in_lane_during_change_in_current_time:
-            var target_time = note_data["start_time"]
+        for note_data: NoteData in notes_in_lane_during_change_in_current_time:
+            var target_time = note_data.start_time
 
             spawn_note_in_lane(lane.lane_id, target_time)
 

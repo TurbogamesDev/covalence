@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cqq1rc4i2qclr"]
+
+[node name="HoldNote" type="Node2D" unique_id=1375059535]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=877175238]
+polygon = PackedVector2Array(-72, -16, -72, 16, 72, 16, 72, -16)

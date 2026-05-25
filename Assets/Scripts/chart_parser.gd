@@ -1,39 +1,42 @@
 extends RefCounted
 class_name ParsedChart
 
-var chart_data = {}
+# var chart_data = {}
+
+var lane_data_array: Dictionary[int, LaneData] = {}
 
 static func init_from_file(file_path: String) -> ParsedChart:
-    assert(FileAccess.file_exists(file_path))
+	assert(FileAccess.file_exists(file_path))
 
-    var data_json: String = FileAccess.get_file_as_string(file_path)
-    var parsed_data = JSON.parse_string(data_json)
+	var data_json: String = FileAccess.get_file_as_string(file_path)
+	var parsed_data = JSON.parse_string(data_json)
 
-    assert(parsed_data is Dictionary)
+	assert(parsed_data is Dictionary)
 
-    var init_parsed_chart: ParsedChart = ParsedChart.new()
+	var init_parsed_chart: ParsedChart = ParsedChart.new()
 
-    init_parsed_chart.chart_data = parsed_data
+	for lane_id: int in range(parsed_data["note_data"].size()):
+		var raw_lane_data = parsed_data["note_data"]["lane_%d" % lane_id]
 
-    return init_parsed_chart
+		var lane_data: LaneData = LaneData.new()
+		lane_data.lane_id = lane_id
 
-func get_notes_for_lane_in_timeframe(lane: int, start_time: float, end_time: float) -> Array:
-    var notes_in_lane = chart_data["note_data"]["lane_%d" % lane]
+		for raw_note_data in raw_lane_data:
+			var note_data: NoteData = NoteData.new()
 
-    var new_notes_in_lane = []
+			note_data.start_time = raw_note_data["start_time"]
+			note_data.end_time = raw_note_data["end_time"]
 
-    for note in notes_in_lane:
-        if note["start_time"] < start_time:
-            continue
+			note_data.note_type = raw_note_data["note_id"]
+			note_data.instant = raw_note_data["instant"]
 
-        if note["end_time"] >= end_time:
-            continue
+			lane_data.notes_in_lane.append(note_data)
 
-        new_notes_in_lane.append(note)
+		init_parsed_chart.lane_data_array[lane_id] = lane_data
 
-    return new_notes_in_lane
+	return init_parsed_chart
 
+func get_notes_for_lane_in_timeframe(lane_id: int, start_time: float, end_time: float) -> Array[NoteData]:
+	var lane_data = self.lane_data_array[lane_id]
 
-
-
-
+	return lane_data.get_notes_in_timeframe(start_time, end_time)
