@@ -1,6 +1,16 @@
 [gd_scene format=3 uid="uid://cqq1rc4i2qclr"]
 
-[node name="HoldNote" type="Node2D" unique_id=1375059535]
+[ext_resource type="Script" uid="uid://bpsa0s6a4blkr" path="res://Assets/Scripts/hold_note.gd" id="1_lk7yx"]
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=877175238]
+[node name="HoldNote" type="Node2D" unique_id=1375059535 node_paths=PackedStringArray("tail_polygon_2d")]
+script = ExtResource("1_lk7yx")
+tail_polygon_2d = NodePath("TailPolygon2D")
+
+[node name="HeadPolygon2D" type="Polygon2D" parent="." unique_id=877175238]
 polygon = PackedVector2Array(-72, -16, -72, 16, 72, 16, 72, -16)
+
+[node name="TailPolygon2D" type="Polygon2D" parent="." unique_id=471763461]
+z_index = -1
+z_as_relative = false
+color = Color(1, 1, 1, 0.33333334)
+polygon = PackedVector2Array(-72, -160, -72, 0, 72, 0, 72, -160)
