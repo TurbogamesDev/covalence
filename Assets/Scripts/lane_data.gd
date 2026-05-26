@@ -12,7 +12,7 @@ func get_notes_in_timeframe(start_time: float, end_time: float) -> Array[NoteDat
         if note_data.start_time < start_time:
             continue
 
-        if note_data.end_time >= end_time:
+        if note_data.start_time >= end_time:
             continue
 
         new_notes_in_lane.append(note_data)

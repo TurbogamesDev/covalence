@@ -7,10 +7,13 @@ script = ExtResource("1_lk7yx")
 tail_polygon_2d = NodePath("TailPolygon2D")
 
 [node name="HeadPolygon2D" type="Polygon2D" parent="." unique_id=877175238]
+z_index = 1
+z_as_relative = false
 polygon = PackedVector2Array(-72, -16, -72, 16, 72, 16, 72, -16)
 
 [node name="TailPolygon2D" type="Polygon2D" parent="." unique_id=471763461]
 z_index = -1
 z_as_relative = false
 color = Color(1, 1, 1, 0.33333334)
+offset = Vector2(0, -16)
 polygon = PackedVector2Array(-72, -160, -72, 0, 72, 0, 72, -160)

@@ -1,4 +1,4 @@
-extends Node2D
+extends Note
 class_name HoldNote
 
 @export var tail_polygon_2d: Polygon2D
@@ -18,6 +18,6 @@ func change_tail_length(new_length: float):
 
     self.tail_polygon_2d.polygon = new_polygon
 
-func _process(_delta: float) -> void:
-    change_tail_length(ChartTimeSynchroniser.current_time * 100)
+# func _process(_delta: float) -> void:
+#     change_tail_length(ChartTimeSynchroniser.current_time * 100)
 
