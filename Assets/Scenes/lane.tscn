@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://rqcjtgftgnxf"]
 
 [ext_resource type="Script" uid="uid://brcixtty4fo86" path="res://Assets/Scripts/lane.gd" id="1_sixl5"]
+[ext_resource type="Script" uid="uid://b6c6ea30wcl85" path="res://Assets/Scripts/lane_hit_effect.gd" id="2_wj750"]
 
-[node name="Lane" type="Node2D" unique_id=348312437 node_paths=PackedStringArray("notes_folder")]
+[node name="Lane" type="Node2D" unique_id=348312437 node_paths=PackedStringArray("notes_folder", "hit_effect_polygon_2d")]
 script = ExtResource("1_sixl5")
 notes_folder = NodePath("Notes")
+hit_effect_polygon_2d = NodePath("HitEffectPolygon2D")
 
 [node name="BackgroundPolygon2D" type="Polygon2D" parent="." unique_id=2080699180]
 color = Color(0, 0, 0, 0.2)
 polygon = PackedVector2Array(-80, -360, -80, 360, 80, 360, 80, -360)
+
+[node name="HitEffectPolygon2D" type="Polygon2D" parent="." unique_id=1032848557]
+position = Vector2(7.1525574e-07, 0)
+scale = Vector2(0.90000004, 1)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-80, -360, -80, 360, 80, 360, 80, 0, 80, -360)
+script = ExtResource("2_wj750")
 
 [node name="Notes" type="Node2D" parent="." unique_id=1622436022]
 

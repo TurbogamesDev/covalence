@@ -1,15 +1,16 @@
 extends Node2D
 class_name Lane
-    
+	
 @export var notes_folder: Node2D
 @export var lane_id: int
+@export var hit_effect_polygon_2d: LaneHitEffect
 
 const NOTE_TYPE_TO_RESOURCE: Dictionary[Enums.NOTE_TYPE, Resource] = {
-    Enums.NOTE_TYPE.REGULAR_NOTE: preload("res://Assets/Scenes/note.tscn"),
-    Enums.NOTE_TYPE.HOLD_NOTE: preload("res://Assets/Scenes/hold_note.tscn")
+	Enums.NOTE_TYPE.REGULAR_NOTE: preload("res://Assets/Scenes/note.tscn"),
+	Enums.NOTE_TYPE.HOLD_NOTE: preload("res://Assets/Scenes/hold_note.tscn")
 }
 
-var current_notes: Array[Note] = []
+var current_note_datas: Array[NoteData] = []
 
 const END_PIXEL_OFFSET = 240.0
 const PIXELS_PER_SECOND = 900.0
@@ -19,52 +20,64 @@ const BUFFER_BEFORE_DELETION_SECONDS = 0 # 0.140
 # var current_time_seconds: float = 0
 
 static func new_position_offset_for_note(target_time_seconds: float):
-    return -(PIXELS_PER_SECOND * (target_time_seconds - ChartTimeSynchroniser.current_time))
+	return -(PIXELS_PER_SECOND * (target_time_seconds - ChartTimeSynchroniser.current_time))
 
 func spawn_note(note_data: NoteData):
-    var note: Note = NOTE_TYPE_TO_RESOURCE[note_data.note_type].instantiate()
+	var note: Note = NOTE_TYPE_TO_RESOURCE[note_data.note_type].instantiate()
 
-    note.position = Vector2(0, END_PIXEL_OFFSET + new_position_offset_for_note(note_data.start_time))
+	note.position = Vector2(0, END_PIXEL_OFFSET + new_position_offset_for_note(note_data.start_time))
 
-    notes_folder.add_child(note)
+	notes_folder.add_child(note)
 
-    current_notes.append(note)
+	note_data.note_instance = note
 
-    note.start_time = note_data.start_time
-    note.end_time = note_data.end_time
+	current_note_datas.append(note_data)
 
-    if note is HoldNote:
-        note.change_tail_length(PIXELS_PER_SECOND * (note.end_time - note.start_time))
+	# note.start_time = note_data.start_time
+	# note.end_time = note_data.end_time
 
-func handle_regular_note_update(note: Note):
-    note.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(note.start_time) 
+	if note is HoldNote:
+		note.change_tail_length(PIXELS_PER_SECOND * (note_data.end_time - note_data.start_time))
 
-func handle_hold_note_update(hold_note: HoldNote):
-    if hold_note.start_time > ChartTimeSynchroniser.current_time:
-        hold_note.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(hold_note.start_time) 
+func handle_regular_note_update(note_data: NoteData):
+	note_data.note_instance.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(note_data.start_time) 
 
-        return
+func handle_hold_note_update(hold_note_data: NoteData):
+	var hold_note_instance = hold_note_data.note_instance
 
-    hold_note.change_tail_length(PIXELS_PER_SECOND * (hold_note.end_time - ChartTimeSynchroniser.current_time))
+	if hold_note_data.start_time > ChartTimeSynchroniser.current_time:
+		hold_note_instance.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(hold_note_data.start_time) 
 
-    hold_note.position.y = END_PIXEL_OFFSET
+		return
+
+	if not hold_note_instance.held_down:
+		self.hit_effect_polygon_2d.activate_hit_effect()
+
+		hold_note_instance.held_down = true
+
+	hold_note_instance.change_tail_length(PIXELS_PER_SECOND * (hold_note_data.end_time - ChartTimeSynchroniser.current_time))
+
+	hold_note_instance.position.y = END_PIXEL_OFFSET
 
 func _process(_delta: float) -> void:
-    for note: Note in current_notes:
-        if not note:
-            continue
+	for note_data: NoteData in current_note_datas:
+		if not note_data.note_instance:
+			continue
 
-        if note is HoldNote:
-            handle_hold_note_update(note)
-        else:
-            handle_regular_note_update(note)
+		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
+			handle_regular_note_update(note_data)
+		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+			handle_hold_note_update(note_data)
 
-        if (note.end_time + BUFFER_BEFORE_DELETION_SECONDS) < ChartTimeSynchroniser.current_time:
-            note.queue_free()
+		if (note_data.end_time + BUFFER_BEFORE_DELETION_SECONDS) < ChartTimeSynchroniser.current_time:
+			if note_data.instant:
+				self.hit_effect_polygon_2d.activate_hit_effect()
 
-            continue
-    
+			self.hit_effect_polygon_2d.deactivate_hit_effect()
+
+			note_data.note_instance.queue_free()
+	
 
 
 
-    
+	
