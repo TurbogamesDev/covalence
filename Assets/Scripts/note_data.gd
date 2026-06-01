@@ -8,3 +8,5 @@ var note_type: Enums.NOTE_TYPE
 var instant: bool
 
 var note_instance: Note
+
+var note_already_hit: bool = false

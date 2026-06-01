@@ -55,26 +55,39 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 		ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) + 0.140	
 	)
 
-	if len(nearby_note_datas) > 0:
-		# print("nearest note was at %f seconds, and the offset was %f seconds." % [nearby_note_datas[0].start_time, ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time])
-		print("%f ms" % ((ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0))
+	lanes[lane_id].hit_effect_polygon_2d.activate_hit_effect()
 
-		print(nearby_note_datas[0].start_time)
+	if len(nearby_note_datas) == 0:
+		return
+
+		# print("nearest note was at %f seconds, and the offset was %f seconds." % [nearby_note_datas[0].start_time, ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time])
+
+		# print(nearby_note_datas[0].start_time)
+
+	for note_data: NoteData in nearby_note_datas:
+		if note_data.note_already_hit:
+			continue
+
+		nearby_note_datas[0].note_already_hit = true
 
 		lanes[lane_id].handle_note_hit(nearby_note_datas[0])
 
-		total_offset += (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0
-		no_of_offsets += 1
+		print("%f ms" % ((ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0))
 
-	else:
-		print("no note was nearby")
+		break
 
-		print(total_offset / no_of_offsets)
+		# total_offset += (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0
+		# no_of_offsets += 1
 
-	lanes[lane_id].hit_effect_polygon_2d.activate_hit_effect()
+	# else:
+	# 	print("no note was nearby")
+
+	# 	# print(total_offset / no_of_offsets)
+
+	
 
 
-func _on_lane_released(lane_id: int, precise_time: float):
+func _on_lane_released(lane_id: int, _precise_time: float):
 	lanes[lane_id].hit_effect_polygon_2d.deactivate_hit_effect()
 
 	# print("lane %d released at %f seconds!" % [lane_id, ChartTimeSynchroniser.current_rhythm_time()])

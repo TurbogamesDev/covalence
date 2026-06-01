@@ -15,7 +15,7 @@ var current_note_datas: Array[NoteData] = []
 const END_PIXEL_OFFSET = 240.0
 const PIXELS_PER_SECOND = 1200.0
 
-const BUFFER_BEFORE_DELETION_SECONDS = 0 # 0.140
+const BUFFER_BEFORE_DELETION_SECONDS = 0.140
 
 const VISUAL_OFFSET = -0.018
 
@@ -67,6 +67,12 @@ func handle_note_hit(note_data: NoteData):
 
 	# self.hit_effect_polygon_2d.deactivate_hit_effect()
 
+	# if not is_instance_valid(note_data.note_instance):
+	# 	return
+
+	# if note_data.note_instance.is_queued_for_deletion():
+	# 	return
+	
 	note_data.note_instance.queue_free()
 
 func _process(_delta: float) -> void:
@@ -79,7 +85,8 @@ func _process(_delta: float) -> void:
 		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
 			handle_hold_note_update(note_data)
 
-		# if (note_data.end_time + BUFFER_BEFORE_DELETION_SECONDS) < ChartTimeSynchroniser.current_rhythm_time():
+		if (note_data.end_time + BUFFER_BEFORE_DELETION_SECONDS) < ChartTimeSynchroniser.current_rhythm_time():
+			handle_note_hit(note_data)
 
 			
 	
