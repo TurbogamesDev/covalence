@@ -13,7 +13,7 @@ const NOTE_TYPE_TO_RESOURCE: Dictionary[Enums.NOTE_TYPE, Resource] = {
 var current_note_datas: Array[NoteData] = []
 
 const END_PIXEL_OFFSET = 240.0
-const PIXELS_PER_SECOND = 1200.0
+const PIXELS_PER_SECOND = 1500.0
 
 const BUFFER_BEFORE_DELETION_SECONDS = 0.140
 
@@ -25,6 +25,8 @@ static func new_position_offset_for_note(target_time_seconds: float):
 	return -(PIXELS_PER_SECOND * (target_time_seconds + VISUAL_OFFSET - ChartTimeSynchroniser.current_rhythm_time()))
 
 func spawn_note(note_data: NoteData):
+	print("note spawned! %f" % ChartTimeSynchroniser.current_rhythm_time())
+
 	var note: Note = NOTE_TYPE_TO_RESOURCE[note_data.note_type].instantiate()
 
 	note.position = Vector2(0, END_PIXEL_OFFSET + new_position_offset_for_note(note_data.start_time))
@@ -47,21 +49,20 @@ func handle_regular_note_update(note_data: NoteData):
 func handle_hold_note_update(hold_note_data: NoteData):
 	var hold_note_instance = hold_note_data.note_instance
 
-	if hold_note_data.start_time > ChartTimeSynchroniser.current_rhythm_time():
+	if hold_note_data.note_held_down:	
+		hold_note_instance.change_tail_length(PIXELS_PER_SECOND * (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()))
+
+		hold_note_instance.position.y = END_PIXEL_OFFSET
+
+		if (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()) < 0:
+			hold_note_data.note_already_hit = true
+
+			handle_note_completion(hold_note_data)
+
+	else:
 		hold_note_instance.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(hold_note_data.start_time) 
 
-		return
-
-	if not hold_note_instance.held_down:
-		# self.hit_effect_polygon_2d.activate_hit_effect()
-
-		hold_note_instance.held_down = true
-
-	hold_note_instance.change_tail_length(PIXELS_PER_SECOND * (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()))
-
-	hold_note_instance.position.y = END_PIXEL_OFFSET
-
-func handle_note_hit(note_data: NoteData):
+func handle_note_completion(note_data: NoteData):
 	# if note_data.instant:
 	# 	self.hit_effect_polygon_2d.activate_hit_effect()
 
@@ -85,8 +86,16 @@ func _process(_delta: float) -> void:
 		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
 			handle_hold_note_update(note_data)
 
-		if (note_data.end_time + BUFFER_BEFORE_DELETION_SECONDS) < ChartTimeSynchroniser.current_rhythm_time():
-			handle_note_hit(note_data)
+		if (note_data.start_time + BUFFER_BEFORE_DELETION_SECONDS) > ChartTimeSynchroniser.current_rhythm_time():
+			continue
+
+		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
+			handle_note_completion(note_data)
+		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+			if note_data.note_held_down:
+				continue
+
+			handle_note_completion(note_data)
 
 			
 	

@@ -10,3 +10,4 @@ var instant: bool
 var note_instance: Note
 
 var note_already_hit: bool = false
+var note_held_down: bool = false
