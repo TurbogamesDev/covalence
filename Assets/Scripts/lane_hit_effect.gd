@@ -1,7 +1,7 @@
 extends Polygon2D
 class_name LaneHitEffect
 
-const TIME_BEFORE_HIT_EFFECT_FADES = 0
+const TIME_BEFORE_HIT_EFFECT_FADES = 0.05
 
 const HIT_EFFECT_ACTIVE_ALPHA = 0.1
 const HIT_EFFECT_NOT_ACTIVE_ALPHA = 0

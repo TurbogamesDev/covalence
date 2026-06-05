@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ChartTimeSynchroniser="*uid://bkw16hqlrpp57"
 InputHandler="*uid://s0tkbm1jjjja"
+JudgementManager="*uid://twvi31378jt0"
 
 [display]
 

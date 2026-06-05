@@ -15,7 +15,7 @@ var current_note_datas: Array[NoteData] = []
 const END_PIXEL_OFFSET = 240.0
 const PIXELS_PER_SECOND = 1500.0
 
-const BUFFER_BEFORE_DELETION_SECONDS = 0.140
+const BUFFER_BEFORE_DELETION_SECONDS = 0.141
 
 const VISUAL_OFFSET = -0.018
 
@@ -55,7 +55,13 @@ func handle_hold_note_update(hold_note_data: NoteData):
 		hold_note_instance.position.y = END_PIXEL_OFFSET
 
 		if (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()) < 0:
+			if hold_note_data.note_already_hit:
+				return
+
 			hold_note_data.note_already_hit = true
+
+			# print("hold note release offset: 0 ms")
+			print("judgement: %s" % JudgementManager.calculate_judgement_for_press(hold_note_data.note_type, 0))
 
 			handle_note_completion(hold_note_data)
 
@@ -88,6 +94,9 @@ func _process(_delta: float) -> void:
 
 		if (note_data.start_time + BUFFER_BEFORE_DELETION_SECONDS) > ChartTimeSynchroniser.current_rhythm_time():
 			continue
+
+		if note_data.note_already_hit:
+			return
 
 		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
 			handle_note_completion(note_data)
