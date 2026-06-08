@@ -62,6 +62,8 @@ func handle_hold_note_update(hold_note_data: NoteData):
 
 			hold_note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(hold_note_data.note_type, 0)
 
+			JudgementManager.log_judgement_data(hold_note_data.note_hit_judgement_data)
+
 			print("-- judgement: %s" % hold_note_data.note_hit_judgement_data.judgement_offset)
 
 			handle_note_completion(hold_note_data)
@@ -110,6 +112,8 @@ func _process(_delta: float) -> void:
 			handle_note_completion(note_data)
 
 		note_data.note_hit_judgement_data =  JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
+
+		JudgementManager.log_judgement_data(note_data.note_hit_judgement_data)
 
 		print("judgement: %s" % note_data.note_hit_judgement_data.judgement_offset)
 

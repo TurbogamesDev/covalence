@@ -43,6 +43,11 @@ func calculate_judgement_data_for_release(note_type: Enums.NOTE_TYPE, offset: fl
 
     return JudgementData.new(Enums.JUDGEMENT_TYPE.NONE, offset)
 
+func log_judgement_data(judgement_data: JudgementData) -> void:
+    AccuracyHandler.add_judgement_data_to_accuracy(judgement_data)
+
+    print(AccuracyHandler.get_current_accuracy())
+
 
 
 
