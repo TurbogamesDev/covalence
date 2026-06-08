@@ -5,6 +5,8 @@ class_name ParsedChart
 
 var lane_data_array: Dictionary[int, LaneData] = {}
 
+var length_of_song: float = 0.0
+
 static func init_from_file(file_path: String) -> ParsedChart:
 	assert(FileAccess.file_exists(file_path))
 
@@ -14,6 +16,8 @@ static func init_from_file(file_path: String) -> ParsedChart:
 	assert(parsed_data is Dictionary)
 
 	var init_parsed_chart: ParsedChart = ParsedChart.new()
+
+	init_parsed_chart.length_of_song = parsed_data["metadata"]["length_of_song"]
 
 	for lane_id: int in range(parsed_data["note_data"].size()):
 		var raw_lane_data = parsed_data["note_data"]["lane_%d" % lane_id]

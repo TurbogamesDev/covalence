@@ -14,6 +14,8 @@ var previous_current_time = 0.0
 var total_offset: float = 0.0
 var no_of_offsets: float = 0.0
 
+var song_ended: bool = false
+
 func _ready() -> void:
 	InputHandler.lane_pressed.connect(_on_lane_pressed)
 	InputHandler.lane_released.connect(_on_lane_released)
@@ -37,6 +39,11 @@ func _process(_delta: float) -> void:
 			spawn_note_in_lane(lane.lane_id, note_data)
 
 	previous_current_time = current_time
+
+	if not song_ended and current_time >= current_parsed_chart.length_of_song:
+		song_ended = true
+
+		print("Song Ended!")
 
 func _exit_tree() -> void:
 	if InputHandler.lane_pressed.is_connected(_on_lane_pressed):

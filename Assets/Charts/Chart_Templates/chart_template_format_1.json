@@ -6,7 +6,8 @@
         "cover_artist": "Cover Artist Name",
         "charter": "Charter Name",
         "bpm": 120.0,
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "length_of_song": 0.0
     },
     "note_data": {
         "lane_0": [
