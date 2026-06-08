@@ -15,36 +15,10 @@ static func init_from_file(file_path: String) -> ParsedChart:
 
 	var init_parsed_chart: ParsedChart = ParsedChart.new()
 
-	var i = 0
-
 	for lane_id: int in range(parsed_data["note_data"].size()):
 		var raw_lane_data = parsed_data["note_data"]["lane_%d" % lane_id]
 
-		var lane_data: LaneData = LaneData.new()
-		lane_data.lane_id = lane_id
-
-		for raw_note_data in raw_lane_data:
-			var note_data: NoteData = NoteData.new()
-
-			note_data.start_time = raw_note_data["start_time"]
-			note_data.end_time = raw_note_data["end_time"]
-
-			note_data.note_type = raw_note_data["note_id"]
-			note_data.instant = raw_note_data["instant"]
-
-			print(raw_note_data)
-			print(note_data.start_time)
-			print(note_data.end_time)
-			print(note_data.instant)
-			print(note_data.note_type)
-			
-
-			i += 1
-			print(i)
-
-			lane_data.notes_in_lane.append(note_data)
-
-		init_parsed_chart.lane_data_array[lane_id] = lane_data
+		init_parsed_chart.lane_data_array[lane_id] = LaneData.new(raw_lane_data, lane_id)
 
 	return init_parsed_chart
 

@@ -60,8 +60,9 @@ func handle_hold_note_update(hold_note_data: NoteData):
 
 			hold_note_data.note_already_hit = true
 
-			# print("hold note release offset: 0 ms")
-			print("judgement: %s" % JudgementManager.calculate_judgement_for_press(hold_note_data.note_type, 0))
+			hold_note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(hold_note_data.note_type, 0)
+
+			print("-- judgement: %s" % hold_note_data.note_hit_judgement_data.judgement_offset)
 
 			handle_note_completion(hold_note_data)
 
@@ -98,6 +99,8 @@ func _process(_delta: float) -> void:
 		if note_data.note_already_hit:
 			return
 
+		var offset = 1000 * (ChartTimeSynchroniser.current_rhythm_time() - note_data.start_time)
+
 		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
 			handle_note_completion(note_data)
 		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
@@ -105,6 +108,10 @@ func _process(_delta: float) -> void:
 				continue
 
 			handle_note_completion(note_data)
+
+		note_data.note_hit_judgement_data =  JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
+
+		print("judgement: %s" % note_data.note_hit_judgement_data.judgement_offset)
 
 			
 	

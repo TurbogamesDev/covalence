@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cugelglhv0onf"]
 
-[ext_resource type="Script" uid="uid://b33yrdnjgdbk8" path="res://Assets/Scripts/lane_handler.gd" id="1_d7bg4"]
+[ext_resource type="Script" uid="uid://b33yrdnjgdbk8" path="res://Assets/Scripts/SceneScripts/lane_handler.gd" id="1_d7bg4"]
 [ext_resource type="PackedScene" uid="uid://rqcjtgftgnxf" path="res://Assets/Scenes/lane.tscn" id="2_0whfj"]
 
 [node name="LaneHandler" type="Node2D" unique_id=197780958 node_paths=PackedStringArray("lanes")]
@@ -11,7 +11,6 @@ lanes = [NodePath("Lanes/Lane_0"), NodePath("Lanes/Lane_1"), NodePath("Lanes/Lan
 
 [node name="Lane_0" parent="Lanes" unique_id=348312437 instance=ExtResource("2_0whfj")]
 position = Vector2(-240, 0)
-lane_id = null
 
 [node name="Lane_1" parent="Lanes" unique_id=1363644065 instance=ExtResource("2_0whfj")]
 position = Vector2(-80, 0)

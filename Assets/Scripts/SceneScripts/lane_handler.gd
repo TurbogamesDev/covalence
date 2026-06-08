@@ -68,7 +68,7 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 		if note_data.note_already_hit or note_data.note_held_down:
 			continue
 
-		var offset = round(1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.start_time))
+		var offset = 1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.start_time)
 
 		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
 			# print("note press offset: %d ms" % offset)
@@ -82,7 +82,9 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 
 			note_data.note_held_down = true
 
-		print("judgement: %s" % JudgementManager.calculate_judgement_for_press(note_data.note_type, offset))
+		note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
+
+		print("judgement: %s" % note_data.note_hit_judgement_data.judgement_offset)
 
 		break
 
@@ -120,7 +122,7 @@ func _on_lane_released(lane_id: int, precise_time: float):
 		if not note_data.note_held_down:
 			continue
 
-		var offset = round(1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.end_time))
+		var offset = 1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.end_time)
 
 		if note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
 			# print("hold note release offset: %d ms" % round(1000* (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.end_time)))
@@ -130,7 +132,9 @@ func _on_lane_released(lane_id: int, precise_time: float):
 
 			lanes[lane_id].handle_note_completion(note_data)
 
-		print("judgement: %s" % JudgementManager.calculate_judgement_for_press(note_data.note_type, offset))
+		note_data.note_release_judgement_data = JudgementManager.calculate_judgement_data_for_release(note_data.note_type, offset)
+
+		print("judgement: %s" % note_data.note_release_judgement_data.judgement_offset)
 
 		break
 
