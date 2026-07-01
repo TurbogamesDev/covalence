@@ -6,8 +6,6 @@ class_name HoldNote
 
 var tail_length: float = 144
 
-# var held_down: bool = false
-
 func change_tail_length(new_length: float):
     self.tail_length = new_length
     
@@ -19,7 +17,3 @@ func change_tail_length(new_length: float):
     ])
 
     self.tail_polygon_2d.polygon = new_polygon
-
-# func _process(_delta: float) -> void:
-#     change_tail_length(ChartTimeSynchroniser.current_rhythm_time() * 100)
-

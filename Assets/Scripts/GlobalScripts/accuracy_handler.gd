@@ -19,10 +19,10 @@ func get_current_accuracy():
         return 100.0
 
     else:
-        return 100 * (current_raw_accuracy / total_raw_accuracy)
+        return 100.0 * (current_raw_accuracy / total_raw_accuracy)
 
 func add_judgement_data_to_accuracy(judgement_data: JudgementData):
-    total_raw_accuracy += 1
+    total_raw_accuracy += 1.0
 
     current_raw_accuracy += JUDGEMENT_TYPE_TO_ACCURACY[judgement_data.judgement_type]
 

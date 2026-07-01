@@ -54,8 +54,6 @@ func _exit_tree() -> void:
 
 
 func _on_lane_pressed(lane_id: int, precise_time: float):
-	# print("lane %d pressed at %f seconds!" % [lane_id, ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time)])
-
 	var nearby_note_datas: Array[NoteData] = current_parsed_chart.get_notes_for_lane_in_timeframe(
 		lane_id,
 		ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - 0.140,
@@ -67,10 +65,6 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 	if len(nearby_note_datas) == 0:
 		return
 
-		# print("nearest note was at %f seconds, and the offset was %f seconds." % [nearby_note_datas[0].start_time, ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time])
-
-		# print(nearby_note_datas[0].start_time)
-
 	for note_data: NoteData in nearby_note_datas:
 		if note_data.note_already_hit or note_data.note_held_down:
 			continue
@@ -78,15 +72,11 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 		var offset = 1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.start_time)
 
 		if note_data.note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
-			# print("note press offset: %d ms" % offset)
-
 			note_data.note_already_hit = true
 
 			lanes[lane_id].handle_note_completion(note_data)
 
 		elif note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
-			# print("hold note press ofset: %d ms" % offset)
-
 			note_data.note_held_down = true
 
 		note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
@@ -97,26 +87,7 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 
 		break
 
-	# 	print("%f ms" % ((ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0))
-
-	# 	# break
-
-	# 	total_offset += (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - nearby_note_datas[0].start_time) * 1_000.0
-	# 	no_of_offsets += 1
-
-	# # else:
-	# 	# print("no note was nearby")
-
-	# 	print(total_offset / no_of_offsets)
-
-		# break
-
-	
-
-
 func _on_lane_released(lane_id: int, precise_time: float):
-	# print("lane %d released at %f seconds!" % [lane_id, ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time)])
-
 	var current_note_datas: Array[NoteData] = lanes[lane_id].current_note_datas
 
 	lanes[lane_id].hit_effect_polygon_2d.deactivate_hit_effect()
@@ -125,18 +96,14 @@ func _on_lane_released(lane_id: int, precise_time: float):
 		return
 
 	for note_data: NoteData in current_note_datas:
-		if note_data.note_already_hit:
-			continue
-
-		if not note_data.note_held_down:
+		if note_data.note_already_hit or not note_data.note_held_down:
 			continue
 
 		var offset = 1000 * (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.end_time)
 
 		if note_data.note_type == Enums.NOTE_TYPE.HOLD_NOTE:
-			# print("hold note release offset: %d ms" % round(1000* (ChartTimeSynchroniser.get_rhythm_time_from_precise_time(precise_time) - note_data.end_time)))
-
 			note_data.note_held_down = false
+
 			note_data.note_already_hit = true
 
 			lanes[lane_id].handle_note_completion(note_data)
@@ -148,9 +115,6 @@ func _on_lane_released(lane_id: int, precise_time: float):
 		print("judgement: %s" % note_data.note_release_judgement_data.judgement_offset)
 
 		break
-
-	# print("lane %d released at %f seconds!" % [lane_id, ChartTimeSynchroniser.current_rhythm_time()])
-
 
 func initialise_chart():
 	current_parsed_chart = ParsedChart.init_from_file("res://Assets/Charts/test_chart_2.json")

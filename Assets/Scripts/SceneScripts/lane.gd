@@ -49,27 +49,31 @@ func handle_regular_note_update(note_data: NoteData):
 func handle_hold_note_update(hold_note_data: NoteData):
 	var hold_note_instance = hold_note_data.note_instance
 
-	if hold_note_data.note_held_down:	
-		hold_note_instance.change_tail_length(PIXELS_PER_SECOND * (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()))
-
-		hold_note_instance.position.y = END_PIXEL_OFFSET
-
-		if (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()) < 0:
-			if hold_note_data.note_already_hit:
-				return
-
-			hold_note_data.note_already_hit = true
-
-			hold_note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(hold_note_data.note_type, 0)
-
-			JudgementManager.log_judgement_data(hold_note_data.note_hit_judgement_data)
-
-			print("-- judgement: %s" % hold_note_data.note_hit_judgement_data.judgement_offset)
-
-			handle_note_completion(hold_note_data)
-
-	else:
+	if not hold_note_data.note_held_down:
 		hold_note_instance.position.y = END_PIXEL_OFFSET + new_position_offset_for_note(hold_note_data.start_time) 
+
+		return
+	
+	hold_note_instance.change_tail_length(PIXELS_PER_SECOND * (hold_note_data.end_time - ChartTimeSynchroniser.current_rhythm_time()))
+
+	hold_note_instance.position.y = END_PIXEL_OFFSET
+
+	if hold_note_data.end_time > ChartTimeSynchroniser.current_rhythm_time():
+		return
+
+	if hold_note_data.note_already_hit:
+		return
+
+	hold_note_data.note_already_hit = true
+
+	hold_note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(hold_note_data.note_type, 0)
+
+	JudgementManager.log_judgement_data(hold_note_data.note_hit_judgement_data)
+
+	print("-- judgement: %s" % hold_note_data.note_hit_judgement_data.judgement_offset)
+
+	handle_note_completion(hold_note_data)
+
 
 func handle_note_completion(note_data: NoteData):
 	# if note_data.instant:
@@ -99,7 +103,7 @@ func _process(_delta: float) -> void:
 			continue
 
 		if note_data.note_already_hit:
-			return
+			continue
 
 		var offset = 1000 * (ChartTimeSynchroniser.current_rhythm_time() - note_data.start_time)
 
@@ -111,7 +115,7 @@ func _process(_delta: float) -> void:
 
 			handle_note_completion(note_data)
 
-		note_data.note_hit_judgement_data =  JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
+		note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
 
 		JudgementManager.log_judgement_data(note_data.note_hit_judgement_data)
 
