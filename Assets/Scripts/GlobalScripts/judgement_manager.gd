@@ -48,6 +48,10 @@ func log_judgement_data(judgement_data: JudgementData) -> void:
 
     print(AccuracyHandler.get_current_accuracy())
 
+    ComboHandler.update_combo_from_judgement_data(judgement_data)
+
+    print("Combo: %d" % ComboHandler.current_combo)
+
 
 
 
