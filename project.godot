@@ -22,6 +22,7 @@ InputHandler="*uid://s0tkbm1jjjja"
 JudgementManager="*uid://twvi31378jt0"
 AccuracyHandler="*uid://c4346ik3ro8r3"
 ComboHandler="*uid://xtlxymcbai2g"
+ResultHandler="*uid://bhylutv0gumnv"
 
 [display]
 
