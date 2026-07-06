@@ -17,8 +17,6 @@ const MAXIMUM_OFFSET_FOR_JUDGEMENT_RELEASE_1: Dictionary[Enums.JUDGEMENT_TYPE, f
     Enums.JUDGEMENT_TYPE.EXACT: INF
 }
 
-var total_notes_in_chart: int = 0
-
 static func get_judgement_data_from_max_offset_table_and_offset(max_offset_table: Dictionary[Enums.JUDGEMENT_TYPE, float], offset: float) -> JudgementData:
     for judgement_type: Enums.JUDGEMENT_TYPE in max_offset_table:
         var max_offset: float = max_offset_table[judgement_type]

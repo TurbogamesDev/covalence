@@ -119,9 +119,11 @@ func _on_lane_released(lane_id: int, precise_time: float):
 func initialise_chart():
 	current_parsed_chart = ParsedChart.init_from_file("res://Assets/Charts/test_chart_2.json")
 
-	JudgementManager.total_notes_in_chart = current_parsed_chart.get_total_number_of_notes()
+	ResultHandler.total_start_note_datas = current_parsed_chart.get_total_number_of_start_note_datas()
+	ResultHandler.total_end_note_datas = current_parsed_chart.get_total_number_of_end_note_datas()
 
-	print("Total notes in chart: %d" % JudgementManager.total_notes_in_chart)
+	print(ResultHandler.total_start_note_datas)
+	print(ResultHandler.total_end_note_datas)
 
 	for lane: Lane in lanes:
 		var notes_in_lane = current_parsed_chart.get_notes_for_lane_in_timeframe(lane.lane_id, 0.0, NOTE_SPAWN_BUFFER)
