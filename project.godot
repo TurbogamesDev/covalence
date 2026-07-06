@@ -23,6 +23,7 @@ JudgementManager="*uid://twvi31378jt0"
 AccuracyHandler="*uid://c4346ik3ro8r3"
 ComboHandler="*uid://xtlxymcbai2g"
 ResultHandler="*uid://bhylutv0gumnv"
+ScoreHandler="*uid://b4w8hklnsktct"
 
 [display]
 
