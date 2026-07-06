@@ -81,7 +81,7 @@ func _on_lane_pressed(lane_id: int, precise_time: float):
 
 		note_data.note_hit_judgement_data = JudgementManager.calculate_judgement_data_for_press(note_data.note_type, offset)
 
-		ResultHandler.add_judgement_data_to_result(note_data.note_hit_judgement_data)
+		ResultHandler.add_judgement_data_to_result(note_data.note_hit_judgement_data, note_data.note_type, false)
 
 		print("judgement: %s" % note_data.note_hit_judgement_data.judgement_offset)
 
@@ -110,7 +110,7 @@ func _on_lane_released(lane_id: int, precise_time: float):
 
 		note_data.note_release_judgement_data = JudgementManager.calculate_judgement_data_for_release(note_data.note_type, offset)
 
-		ResultHandler.add_judgement_data_to_result(note_data.note_release_judgement_data)
+		ResultHandler.add_judgement_data_to_result(note_data.note_release_judgement_data, note_data.note_type, true)
 
 		print("judgement: %s" % note_data.note_release_judgement_data.judgement_offset)
 

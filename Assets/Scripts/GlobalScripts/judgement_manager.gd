@@ -35,10 +35,16 @@ func calculate_judgement_data_for_press(note_type: Enums.NOTE_TYPE, offset: floa
     elif note_type == Enums.NOTE_TYPE.HOLD_NOTE:
         return get_judgement_data_from_max_offset_table_and_offset(MAXIMUM_OFFSET_FOR_JUDGEMENT_PRESS_1, offset)
 
+    else:
+        push_error("Unknown Note Type!")
+
     return JudgementData.new(Enums.JUDGEMENT_TYPE.NONE, offset)
 
 func calculate_judgement_data_for_release(note_type: Enums.NOTE_TYPE, offset: float) -> JudgementData:
     if note_type == Enums.NOTE_TYPE.HOLD_NOTE:
         return get_judgement_data_from_max_offset_table_and_offset(MAXIMUM_OFFSET_FOR_JUDGEMENT_RELEASE_1, offset)
+
+    else:
+        push_error("Unknown Note Type!")
 
     return JudgementData.new(Enums.JUDGEMENT_TYPE.NONE, offset)
