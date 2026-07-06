@@ -30,3 +30,12 @@ func get_notes_for_lane_in_timeframe(lane_id: int, start_time: float, end_time: 
 	var lane_data = self.lane_data_array[lane_id]
 
 	return lane_data.get_notes_in_timeframe(start_time, end_time)
+
+func get_total_number_of_notes() -> int:
+	var total_note_count: int = 0
+
+	for lane_data: LaneData in lane_data_array.values():
+		total_note_count += len(lane_data.notes_in_lane)
+
+	return total_note_count
+
