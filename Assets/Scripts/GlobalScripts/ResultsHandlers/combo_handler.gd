@@ -65,6 +65,4 @@ func get_max_combo() -> int:
 
         max_combo += note_data_count
 
-    print("Max Combo: %d" % max_combo)
-
     return max_combo
