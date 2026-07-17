@@ -57,31 +57,53 @@ func get_current_strict_accuracy():
     else:
         return 100.0 * (current_raw_strict_accuracy / total_raw_strict_accuracy)
 
+func calculate_raw_accuracy_for_judgement_data(judgement_data: JudgementData, note_type: Enums.NOTE_TYPE, end_hit: bool) -> float:
+    if end_hit:
+        if note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_RELEASE_1[judgement_data.judgement_type]
+
+        else:
+            push_error("Unknown Note Type!")
+
+            return 0.0
+
+    else:
+        if note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_HIT_1[judgement_data.judgement_type]
+
+        elif note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_HIT_1[judgement_data.judgement_type]
+
+        else:
+            push_error("Unknown Note Type!")
+
+            return 0.0
+
+func calculate_raw_strict_accuracy_for_judgement_data(judgement_data: JudgementData, note_type: Enums.NOTE_TYPE, end_hit: bool) -> float:
+    if end_hit:
+        if note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_RELEASE_2[judgement_data.judgement_type]
+
+        else:
+            push_error("Unknown Note Type!")
+
+            return 0.0
+
+    else:
+        if note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_HIT_2[judgement_data.judgement_type]
+
+        elif note_type == Enums.NOTE_TYPE.HOLD_NOTE:
+            return JUDGEMENT_TYPE_TO_ACCURACY_HIT_2[judgement_data.judgement_type]
+
+        else:
+            push_error("Unknown Note Type!")
+
+            return 0.0
+
 func add_judgement_data_to_accuracy(judgement_data: JudgementData, note_type: Enums.NOTE_TYPE, end_hit: bool):
     total_raw_accuracy += 1.0
     total_raw_strict_accuracy += 1.0
 
-    if end_hit:
-        if note_type == Enums.NOTE_TYPE.HOLD_NOTE:
-            current_raw_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_RELEASE_1[judgement_data.judgement_type]
-            current_raw_strict_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_RELEASE_2[judgement_data.judgement_type]
-
-        else:
-            push_error("Unknown Note Type!")
-
-    else:
-        if note_type == Enums.NOTE_TYPE.REGULAR_NOTE:
-            current_raw_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_HIT_1[judgement_data.judgement_type]
-            current_raw_strict_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_HIT_2[judgement_data.judgement_type]
-
-        elif note_type == Enums.NOTE_TYPE.HOLD_NOTE:
-            current_raw_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_HIT_1[judgement_data.judgement_type]
-            current_raw_strict_accuracy += JUDGEMENT_TYPE_TO_ACCURACY_HIT_2[judgement_data.judgement_type]
-
-        else:
-            push_error("Unknown Note Type!")
-
-    
-
-
-
+    current_raw_accuracy += calculate_raw_accuracy_for_judgement_data(judgement_data, note_type, end_hit)
+    current_raw_strict_accuracy += calculate_raw_strict_accuracy_for_judgement_data(judgement_data, note_type, end_hit)
