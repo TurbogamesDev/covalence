@@ -50,13 +50,6 @@ func get_current_accuracy():
     else:
         return 100.0 * (current_raw_accuracy / total_raw_accuracy)
 
-func get_current_strict_accuracy():
-    if total_raw_strict_accuracy == 0.0:
-        return 100.0
-
-    else:
-        return 100.0 * (current_raw_strict_accuracy / total_raw_strict_accuracy)
-
 func calculate_raw_accuracy_for_judgement_data(judgement_data: JudgementData, note_type: Enums.NOTE_TYPE, end_hit: bool) -> float:
     if end_hit:
         if note_type == Enums.NOTE_TYPE.HOLD_NOTE:
@@ -107,3 +100,49 @@ func add_judgement_data_to_accuracy(judgement_data: JudgementData, note_type: En
 
     current_raw_accuracy += calculate_raw_accuracy_for_judgement_data(judgement_data, note_type, end_hit)
     current_raw_strict_accuracy += calculate_raw_strict_accuracy_for_judgement_data(judgement_data, note_type, end_hit)
+
+func get_max_raw_accuracy() -> float:
+    var max_raw_accuracy: float = 0
+    
+    for note_type in ResultHandler.total_start_note_datas:
+        var note_data_count = ResultHandler.total_start_note_datas[note_type]
+
+        max_raw_accuracy += note_data_count * calculate_raw_accuracy_for_judgement_data(
+            JudgementData.new(Enums.JUDGEMENT_TYPE.EXACT, 0.0),
+            note_type,
+            false
+        )
+
+    for note_type in ResultHandler.total_end_note_datas:
+        var note_data_count = ResultHandler.total_end_note_datas[note_type]
+
+        max_raw_accuracy += note_data_count * calculate_raw_accuracy_for_judgement_data(
+            JudgementData.new(Enums.JUDGEMENT_TYPE.EXACT, 0.0),
+            note_type,
+            true
+        )
+
+    return max_raw_accuracy
+
+func get_max_raw_strict_accuracy() -> float:
+    var max_raw_strict_accuracy: float = 0
+    
+    for note_type in ResultHandler.total_start_note_datas:
+        var note_data_count = ResultHandler.total_start_note_datas[note_type]
+
+        max_raw_strict_accuracy += note_data_count * calculate_raw_strict_accuracy_for_judgement_data(
+            JudgementData.new(Enums.JUDGEMENT_TYPE.EXACT, 0.0),
+            note_type,
+            false
+        )
+
+    for note_type in ResultHandler.total_end_note_datas:
+        var note_data_count = ResultHandler.total_end_note_datas[note_type]
+
+        max_raw_strict_accuracy += note_data_count * calculate_raw_strict_accuracy_for_judgement_data(
+            JudgementData.new(Enums.JUDGEMENT_TYPE.EXACT, 0.0),
+            note_type,
+            true
+        )
+
+    return max_raw_strict_accuracy
