@@ -44,6 +44,7 @@ func _process(_delta: float) -> void:
 		song_ended = true
 
 		print("Song Ended!")
+		print("==== FINAL SCORE: %d ====" % ScoreHandler.calculate_current_score())
 
 func _exit_tree() -> void:
 	if InputHandler.lane_pressed.is_connected(_on_lane_pressed):
