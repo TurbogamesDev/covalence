@@ -13,6 +13,7 @@ func add_judgement_data_to_result(judgement_data: JudgementData, note_type: Enum
     display_current_result()
 
 func display_current_result():
-    print(AccuracyHandler.get_current_accuracy())
+    print("Current Accuracy: %f" % AccuracyHandler.get_current_accuracy())
+    print("Current Strict Accuracy: %f" % AccuracyHandler.get_current_strict_accuracy())
 
     print("Combo: %d" % ComboHandler.current_combo)
